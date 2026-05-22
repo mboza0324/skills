@@ -45,6 +45,18 @@ ascli sync . --name "<workspace name>"
 - No credentials or API keys are required for basic sync
 - Remove skill: `npx skills remove agentspace`
 
+---
+
+## Also in this repo: find-skills
+
+🔍 **Find Skills** — search every agent-skill registry at once (skills.sh + clawhub.ai + GitHub), ranked on each board's own metric, with a built-in security scan of the top candidates.
+
+```bash
+npx skills add agentspace-so/skills --skill find-skills -g
+```
+
+Then ask your agent "find a skill for X" / "what skill should I install for …".
+
 ## License
 
 MIT
