@@ -14,7 +14,6 @@ description: >
   well-maintained, and SAFE one — not whatever ranked first on one site.
 emoji: "🔍"
 homepage: https://agentspace.so
-allowed-tools: Bash(bash scripts/find.sh*), Bash(scripts/find.sh*), Bash(curl *), Bash(jq *), Bash(gh *), Bash(unzip *), Bash(npx -y skills *), Bash(npx skills *)
 license: MIT
 ---
 
