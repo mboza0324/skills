@@ -1,3 +1,7 @@
+## Agent Usage Rules
+
+Before using this fork, agents should read `AGENT_USAGE_RULES.md` for Mike-specific rules about safe sharing, token efficiency, GitHub Codespaces assumptions, and skill-selection behavior.
+
 # agentspace
 
 Share local folders, files, and generated artifacts from your agent via a link.
