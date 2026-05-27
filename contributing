@@ -1,0 +1,81 @@
+# CONTRIBUTING.md
+
+## Development Workflow
+
+1. Check `AGENT_RULES.md`.
+2. Check `ROADMAP.md`.
+3. Check `ARCHITECTURE.md`.
+4. Create a branch when making code changes.
+5. Make focused changes.
+6. Run relevant tests.
+7. Commit with a descriptive message.
+8. Open pull request when appropriate.
+9. Review changed files.
+10. Merge only after validation.
+
+## Branch Naming
+
+Use:
+
+```text
+feature/name
+fix/name
+refactor/name
+docs/name
+test/name
+chore/name
+```
+
+Examples:
+
+```text
+feature/user-dashboard
+fix/login-error
+refactor/api-services
+docs/update-readme
+test/add-api-tests
+chore/update-config
+```
+
+## Commit Message Rules
+
+Good:
+
+```text
+Add user dashboard layout
+Fix API validation error
+Update deployment documentation
+Add tests for input validation
+```
+
+Bad:
+
+```text
+fix
+stuff
+changes
+update
+latest
+```
+
+## Pull Request Requirements
+
+Every pull request should explain:
+- what changed
+- why it changed
+- files affected
+- testing performed
+- risks
+- deployment impact
+- rollback plan if relevant
+
+## Code Review Checklist
+
+- [ ] Scope is focused
+- [ ] No unrelated files changed
+- [ ] No secrets exposed
+- [ ] Tests/build checked
+- [ ] Documentation updated if needed
+- [ ] Architecture respected
+- [ ] Security impact reviewed
+- [ ] Deployment impact reviewed
