@@ -1,0 +1,25 @@
+name: Validate GAAI integration
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate integration files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f scripts/install-gaai.sh
+          bash -n scripts/install-gaai.sh
+          test -f GAAI.md
+          test -f .gaai/project/contexts/rules/repository-governance.md
+          grep -q 'GAAI_REF=' scripts/install-gaai.sh
+          grep -q 'AGENT_RULES.md' .gaai/project/contexts/rules/repository-governance.md
