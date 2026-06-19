@@ -18,3 +18,5 @@
   },
   "remoteUser": "root"
 }
+
+"postCreateCommand": "bash scripts/install-gaai.sh . && bash scripts/install-skills.sh"
