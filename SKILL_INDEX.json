@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-06-18",
+  "skills": [
+    {
+      "id": "agentspace",
+      "name": "Agentspace",
+      "description": "Share folders and files as live URLs",
+      "keywords": ["share", "folder", "workspace", "collaborate", "URL", "sync"],
+      "path": "agentspace/agentspace/SKILL.md",
+      "install": "npx @agentspace-so/ascli@latest",
+      "usage": "ascli share <path>"
+    },
+    {
+      "id": "find-skills",
+      "name": "Find Skills",
+      "description": "Search every major skill registry at once",
+      "keywords": ["search", "find", "discover", "registry"],
+      "path": "find-skills/SKILL.md",
+      "install": "bash scripts/find.sh",
+      "usage": "bash scripts/find.sh <query>"
+    }
+  ]
+}
