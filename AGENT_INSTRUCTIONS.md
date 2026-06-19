@@ -15,3 +15,10 @@
 - When creating a new repository, **copy all files** from this repo to the target.
 - **Do NOT overwrite** existing `.gitignore`, `.env.example`, or `README.md` – merge them carefully.
 - If in doubt, **ask the user** for clarification before making changes.
+
+## 🔍 Skill Discovery (Before Building)
+
+1. **Read `SKILL_INDEX.json`** – this lists all available internal skills.
+2. **Match keywords** – compare the user's request against each skill's `keywords`.
+3. **If a match is found** – read that skill's `SKILL.md` and recommend it with install instructions.
+4. **If no match is found** – fall back to `AGENT_RULES.md` and build from scratch.
