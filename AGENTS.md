@@ -1,3 +1,5 @@
+> **Note:** GAAI is pre-installed in `.gaai/`. The installer is only needed for updates.
+
 # GAAI — Agent Instructions
 
 > This file is deployed to your project root as `AGENTS.md` by the installer.
