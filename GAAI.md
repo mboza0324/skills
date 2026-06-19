@@ -1,3 +1,5 @@
+> **Note:** GAAI is already installed in `.gaai/`. Run `install-gaai.sh` only if you need to update to a newer version.
+
 # GAAI Integration
 
 This repository uses GAAI for structured Discovery and Delivery while the root governance files remain authoritative.
