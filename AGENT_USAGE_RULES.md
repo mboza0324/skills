@@ -2,104 +2,45 @@
 
 ## Purpose
 
-This fork contains installable agent skills from `agentspace-so/skills`.
+This repository contains installable agent skills and reusable repository-governance files.
 
-Use this repo as a focused skill/tool library.
-
-Do not use this repo as a general notes folder, prompt dump, or personal command center.
-
-This repo is mainly for:
-
-- `agentspace` — sharing folders, files, artifacts, and workspaces
-- `find-skills` — finding useful agent skills
-
----
+Use it as a focused skill and tool library. Do not use it as a general notes folder, prompt dump, or personal command center.
 
 ## Startup Rule
 
-Before using this repo, agents should:
+Before using this repository, agents should:
 
 1. Read this file.
 2. Read the root `README.md`.
 3. Decide whether the task needs `agentspace` or `find-skills`.
-4. Read only that skill’s `SKILL.md`.
-5. Do not read the entire repo unless Mike explicitly asks.
+4. Read only that skill's `SKILL.md`.
+5. Do not inspect unrelated files unless the user explicitly asks.
 
----
+## Token Efficiency
 
-## Token Efficiency Rule
-
-Use the smallest amount of context needed.
-
-Agents must not:
-
-- read unrelated folders
-- summarize the whole repo
-- inspect every file “just in case”
-- copy long skill files into chat
-- install unnecessary skills
-
-Agents should:
-
-- pick the exact skill needed
-- summarize the relevant rules briefly
-- give exact commands
-- stop reading once enough context exists
-
----
+Use the smallest amount of context needed. Pick the exact skill required, summarize relevant rules briefly, and stop reading once sufficient context exists.
 
 ## Environment Rule
 
-Default development environment is GitHub Codespaces unless Mike says otherwise.
+Default development environment is GitHub Codespaces unless the user says otherwise.
 
-Do not assume:
-
-- local terminal access
-- local filesystem paths
-- local Python installation
-- local Node installation
-- local Docker Desktop
-- local `.env` files already exist
-
-When giving commands, frame them as:
-
-```bash
-# In GitHub Codespaces terminal
-```
-
-Do not tell Mike to install software locally unless he explicitly asks.
-
----
+Do not assume local terminal access, local filesystem paths, local Python or Node installations, Docker Desktop, or existing private `.env` files.
 
 ## Agentspace Safety Rule
 
-Use `agentspace` when Mike asks to:
+Use `agentspace` only when the user explicitly asks to share a folder, file, artifact, or workspace.
 
-- share the current folder
-- upload generated files
-- send build artifacts
-- hand off a project
-- give another agent access to a workspace
-- create a shareable workspace link
+Before syncing or sharing, check for:
 
-Before syncing or sharing, warn Mike to check for:
+- `.env` and `.env.local`
+- API keys, tokens, passwords, and private credentials
+- private documents and customer data
+- employer, proprietary, regulated, or confidential information
+- `node_modules`, `.git`, build caches, and unnecessary large files
 
-- `.env`
-- `.env.local`
-- API keys
-- tokens
-- passwords
-- private credentials
-- private documents
-- customer data
-- `node_modules`
-- `.git`
-- build cache folders
-- unnecessary large files
+Never upload employer, customer, regulated, proprietary, or confidential data without explicit authorization from the data owner and the user's organization.
 
-Default to read-only sharing.
-
-Prefer:
+Default to read-only sharing:
 
 ```bash
 ascli sync . --permission view
@@ -111,141 +52,48 @@ or:
 ascli share . --permission view
 ```
 
-Only use edit access if Mike specifically asks for edit access.
-
----
+Use edit access only when the user explicitly requests it and confirms the material is approved for external sharing.
 
 ## Install Rule
 
 Prefer install methods in this order:
 
 1. Existing `ascli`
-2. `npx @agentspace-so/ascli@latest`
-3. `curl -fsSL https://agentspace.so/install.sh | bash` only if needed
+2. A pinned package version through `npx`
+3. A reviewed installer only when necessary
 
-Do not use `curl | bash` casually.
-
----
+Do not use `curl | bash` casually. Avoid unpinned `@latest` dependencies in workplace workflows.
 
 ## Share Link Rule
 
-Do not invent share links.
-
-Only return a share link actually printed by the CLI.
-
-If the CLI fails, explain the failure.
-
----
+Do not invent share links. Only return a share link actually printed by the CLI. If the CLI fails, explain the failure.
 
 ## Find-Skills Rule
 
-Use `find-skills` when Mike asks to:
-
-- find a skill for a task
-- compare agent skills
-- decide whether a skill is worth installing
-- avoid building something that already exists
-
-Do not install a discovered skill automatically.
-
-Before recommending a skill:
-
-1. Check what it does.
-2. Check whether it matches the task.
-3. Watch for risky install instructions.
-4. Prefer simple and reputable skills.
-5. Give one best recommendation when possible.
-
----
+Use `find-skills` to locate or compare skills, but do not install a discovered skill automatically. Review its behavior and installation instructions first.
 
 ## Security Rule
 
-Never commit or sync:
-
-- real API keys
-- real tokens
-- passwords
-- private `.env` values
-- secrets
-- private customer data
-- sensitive personal data
-
-Use placeholders only.
-
-Example:
-
-```text
-OPENAI_API_KEY=your_key_here
-```
-
----
+Never commit, sync, or share real API keys, tokens, passwords, private `.env` values, private customer data, or sensitive personal data. Use placeholders only.
 
 ## Git Rule
 
-Do not commit directly to `main` unless Mike explicitly says so.
-
-Use a feature branch for edits.
-
-Preserve the original fork structure.
-
-Do not rewrite upstream skill files unless necessary.
-
----
+Do not commit directly to `main` unless explicitly instructed. Use a feature branch for edits and preserve upstream skill files unless a change is necessary.
 
 ## Agent Execution Rule
 
-When using this repo, agents must follow this execution order:
+Agents must:
 
-1. Identify Mike's actual goal.
-2. Decide whether this repo is needed.
-3. If needed, choose only one relevant skill:
-   - `agentspace`
-   - `find-skills`
-4. Read only that skill's `SKILL.md`.
-5. Ignore unrelated folders and files.
-6. Execute the task using the smallest safe command set.
-7. Return only:
-   - what was done
-   - the command used
-   - the result or link
-   - any security warning
-   - the next required step, if any
-
-Do not provide long explanations unless Mike asks.
-
-Do not explain the entire repo.
-
-Do not list every possible option.
-
-Prefer the fastest safe path.
-
----
-
-## Output Compression Rule
-
-For normal answers, agents should use this format:
-
-```text
-Answer:
-Steps:
-Command:
-Result:
-Warning:
-Next:
-```
-
-Skip any section that does not apply.
-
-Keep responses short unless the task is complex or Mike asks for depth.
-
----
+1. Identify the user's actual goal.
+2. Choose only the relevant skill.
+3. Read only that skill's `SKILL.md`.
+4. Execute the smallest safe command set.
+5. Return what was done, the command used, the result, security warnings, and the next required step.
 
 ## Absolute Do Nots
 
-- Do not turn this repo into a general command center.
-- Do not add unrelated workflows, prompts, or notes.
 - Do not default to edit permission.
 - Do not upload folders blindly.
-- Do not use `curl | bash` unless necessary.
-- Do not install skills without explaining why.
+- Do not install unreviewed or unpinned tools.
 - Do not claim a share link exists unless the CLI printed it.
+- Do not include personal names or account-specific repository paths in reusable instructions.
