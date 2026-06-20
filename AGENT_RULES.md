@@ -17,7 +17,8 @@ Build reliable, maintainable, production-quality software.
 Before Discovery, Delivery, or any meaningful project work:
 
 - If `.gaai/core/README.md` does not exist, run `bash scripts/install-gaai.sh`.
-- The installer must pull the pinned `mboza0324/GAAI-framework` revision defined in the script.
+- The installer must pull the pinned GAAI framework revision defined in the script.
+- The framework repository must be supplied through `GAAI_REPO`; do not assume a personal account.
 - Do not pull an unpinned branch or the latest upstream commit automatically.
 - Preserve `.gaai/project/` and all root governance files.
 - After pulling, review `git status`, `git diff --stat`, and `git diff` before committing.
@@ -43,6 +44,7 @@ Before Discovery, Delivery, or any meaningful project work:
 - Validate user input and uploads.
 - Protect server-side routes and use least-privilege access.
 - Avoid logging secrets, stack traces, or private data.
+- Never upload employer, customer, regulated, or proprietary data to an external service without explicit authorization.
 
 ## Change Summary
 
