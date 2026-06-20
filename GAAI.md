@@ -1,4 +1,4 @@
-> **Note:** GAAI is already installed in `.gaai/`. Run `install-gaai.sh` only if you need to update to a newer version.
+> **Note:** GAAI is already installed in `.gaai/`. Run `install-gaai.sh` only when you need to update to another reviewed revision.
 
 # GAAI Integration
 
@@ -9,13 +9,13 @@ This repository uses GAAI for structured Discovery and Delivery while the root g
 Run from the repository root in GitHub Codespaces:
 
 ```bash
-bash scripts/install-gaai.sh
+GAAI_REPO=<approved-framework-git-url> bash scripts/install-gaai.sh
 ```
 
-The installer is pinned to a reviewed `mboza0324/GAAI-framework` commit. To deliberately test another revision:
+The installer requires an explicitly approved repository URL and remains pinned to a reviewed commit. To deliberately test another revision:
 
 ```bash
-GAAI_REF=<commit-sha> bash scripts/install-gaai.sh
+GAAI_REPO=<approved-framework-git-url> GAAI_REF=<commit-sha> bash scripts/install-gaai.sh
 ```
 
 Review all generated changes before committing:
